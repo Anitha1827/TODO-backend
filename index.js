@@ -15,11 +15,11 @@ app.use(cors());
 // databse connection
 dbConnection();
 
-// app.get("/", (req, res) => {
-//   res.send({
-//     message: "Api is working successfully!",
-//   });
-// });
+app.get("/", (req, res) => {
+  res.send({
+    message: "Api is working successfully!",
+  });
+});
 
 app.use("/api/todo", todoRouter);
 

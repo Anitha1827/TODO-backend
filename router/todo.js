@@ -73,7 +73,8 @@ router.delete("/delete", async (req, res) => {
   try {
     let id = req.body._id;
 
-    let tododelete = await TODO.findOneAndDelete({ _id: id });
+    let tododelete = await TODO.findByIdAndDelete({ _id: id });
+
     res.status(200).json({ message: "TODO list Deleted Successfully!" });
   } catch (error) {
     console.log(error);
