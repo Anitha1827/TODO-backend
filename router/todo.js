@@ -69,9 +69,10 @@ router.put("/status", async (req, res) => {
 });
 
 // delete todo list
-router.delete("/delete", async (req, res) => {
+router.delete("/delete/:id", async (req, res) => {
   try {
-    let id = req.body._id;
+    let id = req.params.id;
+    console.log(id);
 
     let tododelete = await TODO.findByIdAndDelete({ _id: id });
 
